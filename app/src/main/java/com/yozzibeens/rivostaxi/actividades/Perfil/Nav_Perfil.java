@@ -31,6 +31,8 @@ public class Nav_Perfil extends AppCompatActivity {
     TextView txt_phone_user;
     TextView txt_email_user;
     TextView txt_nombre_user;
+    TextView txt_datos_personales, txt_nombre, txt_email, txt_phone; //********
+
     Button btn_modifydata;
 
     @Override
@@ -44,8 +46,16 @@ public class Nav_Perfil extends AppCompatActivity {
 
         Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
-
+        txt_datos_personales = (TextView) findViewById(R.id.txt_datos_personales);
+        txt_datos_personales.setTypeface(RobotoCondensed_Regular);
+        txt_nombre = (TextView) findViewById(R.id.txt_nombre);
+        txt_nombre.setTypeface(RobotoCondensed_Regular);
+        txt_email = (TextView) findViewById(R.id.txt_email);
+        txt_email.setTypeface(RobotoCondensed_Regular);
+        txt_phone = (TextView) findViewById(R.id.txt_phone);
+        txt_phone.setTypeface(RobotoCondensed_Regular);
         txt_phone_user = (TextView) findViewById(R.id.txt_phone_user);
+        txt_phone_user.setTypeface(RobotoCondensed_Regular);
         txt_email_user = (TextView) findViewById(R.id.txt_email_user);
         txt_nombre_user = (TextView) findViewById(R.id.txt_nombre_user);
 
