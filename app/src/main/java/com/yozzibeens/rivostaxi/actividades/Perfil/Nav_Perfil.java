@@ -57,7 +57,9 @@ public class Nav_Perfil extends AppCompatActivity {
         txt_phone_user = (TextView) findViewById(R.id.txt_phone_user);
         txt_phone_user.setTypeface(RobotoCondensed_Regular);
         txt_email_user = (TextView) findViewById(R.id.txt_email_user);
+        txt_email_user.setTypeface(RobotoCondensed_Regular);
         txt_nombre_user = (TextView) findViewById(R.id.txt_nombre_user);
+        txt_email_user.setTypeface(RobotoCondensed_Regular);
 
         final Preferencias preferencias = new Preferencias(getApplicationContext());
         String ClientId = preferencias.getClient_Id();
