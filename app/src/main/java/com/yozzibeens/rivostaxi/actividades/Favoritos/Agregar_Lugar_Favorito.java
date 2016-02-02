@@ -444,13 +444,28 @@ public class Agregar_Lugar_Favorito extends AppCompatActivity implements GoogleA
                                 if (Integer.parseInt(res) == 1) {
 
                                     String PlaceId = json.getString("Place_Favorite_Id");
-                                    Favorite_PlaceController favorite_placeController  = new Favorite_PlaceController(getApplicationContext());
+
+                                    /*Favorite_PlaceController favorite_placeController  = new Favorite_PlaceController(getApplicationContext());
+
                                     Favorite_Place favorite_place = new Favorite_Place(null , PlaceId,
                                             PlaceName.getText().toString(), mAutocompleteTextView.getText().toString(),
-                                            String.valueOf(latitudeIcon), String.valueOf(longitudeIcon));
-                                    favorite_placeController.guardarFavorite_Place(favorite_place);
+                                            String.valueOf(latitudeIcon), String.valueOf(longitudeIcon));*/
+
+                                    String Name = PlaceName.getText().toString();
+                                    String Direccion = mAutocompleteTextView.getText().toString();
+                                    String latitude = String.valueOf(latitudeIcon);
+                                    String longitude = String.valueOf(longitudeIcon);
+
+                                    /*favorite_placeController.guardarFavorite_Place(favorite_place);*/
 
                                     Intent returnIntent = new Intent();
+
+                                    returnIntent.putExtra("PlaceId", PlaceId);
+                                    returnIntent.putExtra("Name", Name);
+                                    returnIntent.putExtra("Direccion", Direccion);
+                                    returnIntent.putExtra("latitude", latitude);
+                                    returnIntent.putExtra("longitude", longitude);
+
                                     setResult(Activity.RESULT_OK, returnIntent);
 
                                     finish();

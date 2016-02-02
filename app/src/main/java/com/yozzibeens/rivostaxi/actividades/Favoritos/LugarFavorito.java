@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -100,13 +102,36 @@ public class LugarFavorito extends Fragment {
             case 1521:
                 if (resultCode == Activity.RESULT_OK) {
                     favoriteplaceArray.clear();
+                    favoriteplaceAdapter.clear();
+
+
+
+
+                    String PlaceId = data.getStringExtra("PlaceId");
+                    String Name = data.getStringExtra("Name");
+                    String Direccion = data.getStringExtra("Direccion");
+                    String Latitude = data.getStringExtra("latitude");
+                    String Longitude = data.getStringExtra("longitude");
+
+                    Favorite_PlaceController favorite_placeController1 = new Favorite_PlaceController(getActivity().getApplicationContext());
+                    Favorite_Place favorite_place = new Favorite_Place(null, PlaceId, Name, Direccion, Latitude, Longitude);
+                    favorite_placeController1.guardarFavorite_Place(favorite_place);
+
+
                     Favorite_PlaceController favorite_placeController = new Favorite_PlaceController(getActivity());
                     List<Favorite_Place> fplist = favorite_placeController.obtenerFavorite_Place();
+
+
+                    /*favoriteplaceArray.add(new AdaptadorLugarFavorito(PlaceId, Name));
+                    favoriteplaceAdapter.notifyDataSetChanged();*/
+
                     for (int i = 0; i<fplist.size();i++){
+
                         String placeid2 = fplist.get(i).getPlaceFavoriteId();
                         String placename2 = fplist.get(i).getName();
 
                         favoriteplaceArray.add(new AdaptadorLugarFavorito(placeid2, placename2));
+                        favoriteplaceAdapter.notifyDataSetChanged();
                     }
 
                     favoriteplaceAdapter.notifyDataSetChanged();
