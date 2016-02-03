@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yozzibeens.rivostaxi"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.example.mapdemo.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission
+        android:name="com.packagename.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.YozziBeens.danisanc.rivostaxitaxiversion.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="com.packagename.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.YozziBeens.danisanc.rivostaxitaxiversion.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!--
+            meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBeCYnH9D76FoZtpKuJ8P2CadaPnE2VZpo"/
+        -->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBeCYnH9D76FoZtpKuJ8P2CadaPnE2VZpo" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.yozzibeens.rivostaxi.app.Splash"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1234"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yozzibeens.rivostaxi.app.Main"
+            android:label="Solicitar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.tutorial.TutorialActivity"
+            android:label="Tutorial"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.app.Login"
+            android:label="Login"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.app.Registro"
+            android:label="Registro"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.app.TerminosCondiciones"
+            android:label="Terminos y Condiciones"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Ayuda.Nav_Ayuda"
+            android:label="Ayuda"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Perfil.Nav_Perfil"
+            android:label="Perfil"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Historial.Nav_Historial"
+            android:label="Historial"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Favoritos.Nav_Favoritos"
+            android:label="Favoritos"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Reservaciones.Nav_Reservaciones"
+            android:label="Reservaciones"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.app.PreguntasFrecuentes"
+            android:label="Preguntas Frecuentes"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Perfil.Data_In"
+            android:label="Ingresar Codigo"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Perfil.DataInActivity"
+            android:label="Modificar Datos"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Historial.Historial_Detalle"
+            android:label="Detalle Historial"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Favoritos.Agregar_Taxista_Favorito"
+            android:label="Agregar Taxista"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Favoritos.Agregar_Lugar_Favorito"
+            android:label="Agregar Lugar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Solicitar.Detalles_Solicitud"
+            android:label="Detalles Solicitud"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Solicitar.Compra_Final"
+            android:label="Detalle Final"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Proceso.Nav_Proceso"
+            android:label="En Proceso"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Proceso.Pending_History_Details"
+            android:label="Detalle Solicitud"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.app.AcercaDe"
+            android:label="Acerca De"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.yozzibeens.rivostaxi.actividades.Solicitar.Form"
+            android:label="Acerca De"
+            android:windowSoftInputMode="stateHidden" />
+
+        <receiver
+            android:name="com.yozzibeens.rivostaxi.gcm.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.YozziBeens.danisanc.rivostaxitaxiversion" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.yozzibeens.rivostaxi.gcm.GCMNotificationIntentService" />
+    </application>
+
+</manifest>
