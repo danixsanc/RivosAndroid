@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -66,6 +67,10 @@ public class Agregar_Lugar_Favorito extends AppCompatActivity implements GoogleA
 
     ImageButton btn_add_favorite_place;
     Button btn_save_favorite_place;
+
+    AutoCompleteTextView autoCompleteTextView;
+    EditText place_name;
+
     private static String KEY_SUCCESS = "Success";
 
     private static final String LOG_TAG = "MainActivity";
@@ -122,6 +127,16 @@ public class Agregar_Lugar_Favorito extends AppCompatActivity implements GoogleA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.agregar_lugar_favorito);
+
+        //----------TIPO DE FUENTE-----------------------------------------------------------------------------
+        Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
+
+        autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
+        autoCompleteTextView.setTypeface(RobotoCondensed_Regular);
+
+        place_name = (EditText) findViewById(R.id.place_name);
+        place_name.setTypeface(RobotoCondensed_Regular);
+        //------------------------------------------------------------------------------------------------------
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -3,6 +3,7 @@ package com.yozzibeens.rivostaxi.actividades.Favoritos;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -41,7 +42,7 @@ public class Agregar_Taxista_Favorito extends AppCompatActivity {
     private static String KEY_ERROR = "Error";
     private static String KEY_ERROR_MSG = "Error_Msg";
 
-    TextView txt_no_data_detected;
+    TextView txt_no_data_detected, txt_taxistas;
 
 
     Servicio servicio = new Servicio();
@@ -59,7 +60,13 @@ public class Agregar_Taxista_Favorito extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //----------TIPO DE FUENTE-----------------------------------------------------------------------------
+        Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
+
         txt_no_data_detected = (TextView) findViewById(R.id.txt_no_data_detected);
+        txt_no_data_detected.setTypeface(RobotoCondensed_Regular);
+        txt_taxistas = (TextView) findViewById(R.id.txt_taxistas);
+        txt_taxistas.setTypeface(RobotoCondensed_Regular);
 
 
         addfavoritecabbieList = (ListView) findViewById(R.id.list_cabbie_history);
